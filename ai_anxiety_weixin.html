@@ -7,6 +7,28 @@
 </head>
 <body style="margin:0;padding:0;background:#fafaf8;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',sans-serif;color:#1a1a1a;line-height:1.85;font-size:15px;">
 
+<!-- 复制按钮 -->
+<button id="copyBtn" style="position:fixed;top:16px;right:16px;padding:10px 20px;background:#1a1a1a;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,0.15);">复制到公众号</button>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', async function() {
+  var content = document.getElementById('article-content').innerHTML;
+  var htmlBlob = new Blob([content], { type: 'text/html' });
+  var textBlob = new Blob([content], { type: 'text/plain' });
+  var items = [new ClipboardItem({ 
+    'text/html': htmlBlob, 
+    'text/plain': textBlob 
+  })];
+  await navigator.clipboard.write(items);
+  this.textContent = '已复制';
+  this.style.background = '#2e7d32';
+  setTimeout(() => {
+    this.textContent = '复制到公众号';
+    this.style.background = '#1a1a1a';
+  }, 2000);
+});
+</script>
+
 <!-- HEADER -->
 <div style="background:#1a1a1a;color:#fff;padding:48px 32px 40px;text-align:center;">
   <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin:0 0 14px 0;">INSIGHT · 远的AI学习圈</p>
@@ -22,7 +44,7 @@
 </div>
 
 <!-- BODY -->
-<div style="max-width:680px;margin:0 auto;padding:40px 24px 60px;">
+<div id="article-content" style="max-width:680px;margin:0 auto;padding:40px 24px 60px;">
 
   <!-- HOOK -->
   <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这周我看到一个数据，觉得很有意思：小红书上，「避免AI工具焦虑」这篇帖子的收藏量，远超点赞量。</p>
