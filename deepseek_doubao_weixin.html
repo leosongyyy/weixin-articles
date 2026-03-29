@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek还没凉，豆包已经3亿了：AI战争的下半场换了玩法</title>
+</head>
+<body style="margin:0;padding:0;background:#fafaf8;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',sans-serif;color:#1a1a1a;line-height:1.85;font-size:15px;">
+
+<!-- 复制按钮 -->
+<button id="copyBtn" style="position:fixed;top:16px;right:16px;padding:10px 20px;background:#1a1a1a;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,0.15);">复制到公众号</button>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', async function() {
+  var content = document.getElementById('article-content').innerHTML;
+  var htmlBlob = new Blob([content], { type: 'text/html' });
+  var textBlob = new Blob([content], { type: 'text/plain' });
+  var items = [new ClipboardItem({ 
+    'text/html': htmlBlob, 
+    'text/plain': textBlob 
+  })];
+  await navigator.clipboard.write(items);
+  this.textContent = '已复制';
+  this.style.background = '#2e7d32';
+  setTimeout(() => {
+    this.textContent = '复制到公众号';
+    this.style.background = '#1a1a1a';
+  }, 2000);
+});
+</script>
+
+<!-- HEADER -->
+<div style="background:#1a1a1a;color:#fff;padding:48px 32px 40px;text-align:center;">
+  <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin:0 0 14px 0;">INSIGHT · 远的 AI 学习圈</p>
+  <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.3px;margin:0 0 12px 0;color:#fff;line-height:1.4;">DeepSeek还没凉，豆包已经3亿了</h1>
+  <p style="color:#bbb;font-size:14px;margin:0 auto;max-width:500px;line-height:1.7;">AI战争的下半场换了玩法</p>
+  <table style="border-collapse:collapse;margin:20px auto 0;" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+      <td style="padding:0 4px;"><span style="display:inline-block;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#ccc;font-size:12px;">AI行业</span></td>
+      <td style="padding:0 4px;"><span style="display:inline-block;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#ccc;font-size:12px;">深度分析</span></td>
+      <td style="padding:0 4px;"><span style="display:inline-block;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#ccc;font-size:12px;">竞争格局</span></td>
+    </tr>
+  </tbody></table>
+</div>
+
+<!-- BODY -->
+<div id="article-content" style="max-width:680px;margin:0 auto;padding:40px 24px 60px;">
+
+  <!-- HOOK -->
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">2026年3月，网上都在说"DeepSeek凉了"。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">理由是：DeepSeek V4的发布日期，又推迟了。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这次不是技术卡壳，而是梁文锋在憋一个真正的大招——<strong>LTM长期记忆</strong>（Long Term Memory）。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">与此同时，字节跳动的豆包悄悄公布了新数据：日均Token调用量突破100万亿。100万亿是什么概念？相当于全球前三大AI服务商之一的水平。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">这两件事放在一起，告诉我们一个反常识的结论：<strong>AI战争的下半场，根本不是技术在比赛。</strong></p>
+
+  <!-- SOURCE -->
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">我们今天要说的是36氪《大厂AI生死战》、BaristaLabs《中国AI智能体军备竞赛》、腾讯云开发者社区《DeepSeek深度解析》这几篇文章的共同发现。数据来源包括晚点LatePost独家报道、火山引擎官方披露、高盛研报等。</p>
+
+  <!-- SECTION 1 -->
+  <p style="margin:32px 0 14px;font-size:17px;font-weight:700;color:#1a75ff;line-height:1.5;">一、DeepSeek为什么"没凉"</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">DeepSeek V4不是常规升级。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">根据白鲸实验室的独家情报，V4将首发两项颠覆性技术：<strong>LTM长期记忆</strong>和<strong>mHC流形约束超连接</strong>架构。简单说，LTM是要"给AI一颗会记事的大脑"——让它不只是单次对话，而是能跨任务、跨时间记住你的偏好和需求。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">梁文锋的选择是：宁可推迟发布，也要拿下这个技术制高点。这说明什么？</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>说明DeepSeek的定位已经变了。</strong></p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">它不再是那个"靠低价搅局"的挑战者。它的目标，是成为AI时代的水电煤——<strong>基础设施</strong>。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这个转变的证据到处都是：华为云、阿里云、腾讯云全面接入DeepSeek；超过20家车企"上车"；Hugging Face下载量超百万次，GitHub Star超25k。更关键的是，DeepSeek刚发布的DualPath推理框架，可以让离线推理吞吐量提升1.87倍，支持数万人并发智能体。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">这不是在和豆包抢用户。这是在为整个行业修路。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">但问题来了：修路的DeepSeek，和靠生态打市场的豆包，走的是完全不同的两条路。</p>
+
+  <!-- SECTION 2 -->
+  <p style="margin:32px 0 14px;font-size:17px;font-weight:700;color:#1a75ff;line-height:1.5;">二、豆包3亿背后的"流氓式"打法</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">说豆包"3亿"，这个数字有两个含义：累计下载量1.6亿，以及——日均处理Token量从去年12月的50万亿，飙升至如今的100万亿。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">100万亿Token意味着什么？根据IDC数据，字节跳动火山引擎已超越百度云，成为中国公有云市场第一。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">但豆包的成功，不是技术的胜利。</p>
+
+  <div style="background:#fdf4f3;border-radius:6px;padding:16px 20px;margin:8px 0 24px;">
+    <p style="margin:0;font-size:14px;color:#555;line-height:1.8;">字节跳动的核心竞争力，从来不是"技术最强"，而是"流量最大、生态最完整"。</p>
+  </div>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">看看豆包的数据是怎么来的：冠名春晚，撒了15亿红包；"AI对话免费领奶茶"活动，让无数奶茶店员工临时加班；豆包手机、AI眼镜，硬件布局一环扣一环。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这不是"产品好所以用户来"。这是<strong>"用户在哪里，豆包就在哪里"</strong>。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">字节的计划是：先用豆包手机和AI眼镜绑定硬件，然后通过火山引擎49.2%的公有云市场份额，让所有企业都离不开字节的AI生态。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>一句话：豆包不是在做一个产品，它是在布一个局。</strong></p>
+
+  <!-- SECTION 3 -->
+  <p style="margin:32px 0 14px;font-size:17px;font-weight:700;color:#1a75ff;line-height:1.5;">三、AI战争下半场，换了什么玩法</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">上半场：比谁参数大、谁价格低、谁开源。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">下半场：比谁能形成<strong>商业闭环</strong>。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这是36氪《大厂AI生死战》这篇文章的核心论点。2026年，大厂不再追求"单点爆款"，而是力争证明自己能形成可持续的商业模式。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">看看三个玩家的不同路径：</p>
+
+  <div style="background:rgba(169,173,184,0.1);border-radius:8px;padding:20px 24px;margin:8px 0 24px;">
+    <p style="margin:0 0 12px;font-size:14px;color:#1a1a1a;line-height:1.8;"><strong>阿里巴巴（千问）：</strong>三年3800亿投入云与AI基础设施；2026春节60亿红包营销；把"办事"功能（打车、订酒店、买外卖）全部塞进AI，目标是做成"生活入口"。</p>
+    <p style="margin:0 0 12px;font-size:14px;color:#1a1a1a;line-height:1.8;"><strong>字节跳动（豆包）：</strong>不追求独立爆款，靠硬件（豆包手机、AI眼镜）+ 公有云市场份额，形成生态闭环。</p>
+    <p style="margin:0;font-size:14px;color:#1a1a1a;line-height:1.8;"><strong>腾讯（元宝）：</strong>最佛系——不做独立App，把AI能力嵌入微信、腾讯会议、腾讯文档，做"生态型AI"。谁的爆款都能用，谁的流量都能接。</p>
+  </div>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">高盛的判断是：留给巨头的时间只有两年。资本市场要看的不是技术参数，而是<strong>用户愿意为什么付费</strong>。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">目前可见的三条商业化路径：会员订阅、平台抽佣、硬件联动。但坦率说，没有哪条路已经被证明走通了。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>下半场，是一场关于"谁先找到盈利模式"的赛跑。</strong></p>
+
+  <!-- SECTION 4 -->
+  <p style="margin:32px 0 14px;font-size:17px;font-weight:700;color:#1a75ff;line-height:1.5;">四、普通人的机会在哪里</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">文章到这里，普通读者可能会问：巨头打架，我有什么关系？</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>有关系。</strong></p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">下半场有一个特征：技术不再是壁垒，<strong>场景才是</strong>。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">豆包靠春晚红包抢用户，但它做不了"专门帮律师写诉状的AI"。DeepSeek V4参数再大，它也不知道"怎么帮一个开奶茶店的人优化原料采购"。这些垂直场景，是巨头懒得做、不愿做的。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>普通人的机会，就是找到这些"AI懒得做的场景"，然后做到极致。</strong></p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这不是我说的。这是2026年春节AI大战告诉我们的：一个叫OpenClaw的个人开发者，用AI工具10天做出了"能操作电脑的Agent"，掀起了所谓的"养虾热"。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">大公司资源雄厚但决策缓慢，小团队专注问题、迭代更快——这在下半场会越来越明显。</p>
+
+  <!-- 我的评论 -->
+  <p style="margin:40px 0 16px;font-size:17px;font-weight:700;color:#1a1a1a;line-height:1.5;">丨我的评论</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">下半场是"慢功夫"，但普通人往往等不及。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">AI战争的本质，从一开始就不是"谁的技术最强"，而是"谁能让更多人用起来"。DeepSeek选了一条最难的路：做基础设施。这条路慢，但护城河高。豆包选了一条最快的路：生态整合。这条路快，但容易被复制。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>没有绝对正确的选择，只有适不适合你的选择。</strong></p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">对普通人来说，记住一件事就够了：别追技术，追场景。技术会过时，但好的场景会自己长出来。</p>
+
+  <!-- 由此得到 -->
+  <p style="margin:40px 0 16px;font-size:17px;font-weight:700;color:#1a1a1a;line-height:1.5;">由此得到</p>
+
+  <div style="background:#f5f3ef;border-radius:8px;padding:20px 24px;margin:8px 0 8px;">
+    <p style="margin:0 0 12px;font-size:14px;color:#1a1a1a;line-height:1.8;">1. AI战争的胜负不在技术参数，而在商业闭环。</p>
+    <p style="margin:0 0 12px;font-size:14px;color:#1a1a1a;line-height:1.8;">2. DeepSeek没凉，它只是在换个活法。</p>
+    <p style="margin:0 0 12px;font-size:14px;color:#1a1a1a;line-height:1.8;">3. 豆包的成功不是技术胜利，是生态胜利。</p>
+    <p style="margin:0;font-size:14px;color:#1a1a1a;line-height:1.8;">4. 普通人的机会在于场景，不在于技术。</p>
+  </div>
+
+  <p style="margin:32px 0 0;font-size:13px;color:#999;text-align:center;line-height:1.6;">点个关注不迷路</p>
+
+  <div style="margin:24px auto;max-width:200px;">
+    <img src="https://leosongyyy.github.io/weixin-articles/qrcode.jpg" style="width:200px;height:200px;display:block;margin:0 auto;" />
+  </div>
+
+</div>
+
+</body>
+</html>
