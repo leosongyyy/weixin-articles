@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>共鸣：高级生活的秘密 - 万维钢风格解读</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #fafaf8;
+            line-height: 1.85;
+            color: #1a1a1a;
+            font-size: 15px;
+        }
+        /* ===== 复制按钮 ===== */
+        #copyBtn {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.3s;
+        }
+        #copyBtn:hover { background: #333; }
+        /* ===== HEADER ===== */
+        .article-header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 48px 32px 40px;
+            text-align: center;
+        }
+        .article-header .eyebrow {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 14px;
+        }
+        .article-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 12px;
+            color: #fff;
+            line-height: 1.4;
+        }
+        .article-header .subtitle {
+            color: #bbb;
+            font-size: 14px;
+            margin: 0 auto;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+        .article-header .tags {
+            margin-top: 20px;
+        }
+        .article-header .tag {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc;
+            font-size: 12px;
+            margin: 0 4px;
+        }
+        /* ===== BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+        /* ===== HOOK ===== */
+        .hook {
+            margin-bottom: 28px;
+        }
+        /* ===== CORE FORMULA BOX ===== */
+        .formula-box {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin: 24px 0 32px;
+            text-align: center;
+        }
+        .formula-box .formula-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .formula-box .formula-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+        }
+        /* ===== QUOTE BOX ===== */
+        .quote-box {
+            background: #fdf4f3;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 8px 0 28px;
+        }
+        .quote-box .quote-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        .quote-box .quote-source {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+        }
+        /* ===== BLUE QUOTE ===== */
+        .quote-blue {
+            background: #eef4fa;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 8px 0 28px;
+        }
+        .quote-blue .quote-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+        }
+        /* ===== SECTION HEADING ===== */
+        .section-heading {
+            margin: 32px 0 14px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+        /* ===== SUB HEADING ===== */
+        .sub-heading {
+            margin: 24px 0 14px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        /* ===== DIVIDER ===== */
+        .divider {
+            text-align: center;
+            margin: 36px 0;
+            color: #ddd;
+            letter-spacing: 6px;
+            font-size: 14px;
+        }
+        /* ===== COMMENTARY SECTION ===== */
+        .commentary-box {
+            background: rgba(26,113,255,0.04);
+            border-radius: 8px;
+            padding: 24px 24px;
+            margin: 8px 0 32px;
+            border-left: 3px solid #1a75ff;
+        }
+        .commentary-box .commentary-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a75ff;
+            margin-bottom: 14px;
+        }
+        /* ===== TAKEAWAY BOX ===== */
+        .takeaway-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 10px;
+            padding: 28px 24px;
+            margin: 32px 0;
+        }
+        .takeaway-box .takeaway-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .takeaway-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .takeaway-box li {
+            padding: 0 0 16px 0;
+            font-size: 15px;
+            color: #fff;
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .takeaway-box li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .takeaway-box li strong {
+            color: #ffd700;
+        }
+        /* ===== READING BOX ===== */
+        .reading-box {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 28px 0;
+        }
+        .reading-box .reading-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 14px;
+        }
+        .reading-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .reading-box li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .reading-box li strong {
+            color: #333;
+        }
+        /* ===== REFERENCES ===== */
+        .references {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        .references h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 12px;
+        }
+        .references ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .references li {
+            padding: 4px 0;
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        .references a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        .references a:hover {
+            color: #1a75ff;
+        }
+        /* ===== NAV ===== */
+        .series-nav {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 28px;
+            margin-top: 28px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+        .series-nav a {
+            color: #1a75ff;
+            text-decoration: none;
+        }
+        .series-nav a:hover {
+            text-decoration: underline;
+        }
+        /* ===== FOOTER CTA ===== */
+        .footer-cta {
+            background: #f5f5f7;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer-cta .cta-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .footer-cta .cta-sub {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .footer-cta .qrcode {
+            width: 240px;
+            height: 240px;
+            display: block;
+            margin: 0 auto 12px;
+            border-radius: 8px;
+        }
+        .footer-cta .brand {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .footer-cta .brand-sub {
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
+        }
+        /* ===== BOTTOM HINT ===== */
+        .bottom-hint {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26,26,26,0.9);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+        }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .article-header { padding: 36px 20px 32px; }
+            .article-header h1 { font-size: 22px; }
+            .article-body { padding: 28px 16px 48px; }
+            .formula-box { padding: 20px 20px; }
+            .formula-box .formula-text { font-size: 18px; }
+            #copyBtn { top: 12px; right: 12px; padding: 8px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <button id="copyBtn" onclick="copyArticle()">复制到公众号</button>
+
+    <!-- HEADER -->
+    <div class="article-header">
+        <p class="eyebrow">INSIGHT · 万维钢新课</p>
+        <h1>共鸣：高级生活的秘密</h1>
+        <p class="subtitle">模块一：成长战略 · 第 021 课</p>
+        <div class="tags">
+            <span class="tag">思维模型</span>
+            <span class="tag">认知升级</span>
+            <span class="tag">行为科学</span>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="article-content">
+    <div class="article-body">
+
+        <!-- HOOK -->
+        <div class="hook">
+            <p>【此处填写 Hook：用一个反直觉的问题或场景开头，激发读者好奇心，引出本课核心概念。推荐使用设问句或悖论式开场。】</p>
+        </div>
+
+        <!-- CORE FORMULA / CONCEPT -->
+        <div class="formula-box">
+            <p class="formula-label">核心概念</p>
+            <p class="formula-text">共鸣：高级生活的秘密</p>
+        </div>
+
+        <p>【此处展开核心概念的定义、背景和重要性。使用自然段落，不使用项目符号。约 200-300 字。】</p>
+
+        <!-- QUOTE -->
+        <div class="quote-box">
+            <p class="quote-text">【此处填写核心金句或关键引用，建议 1-2 句话，具有传播性和洞察力。】</p>
+            <p class="quote-source">—— 【来源：专家名字或书籍】</p>
+        </div>
+
+        <div class="divider">✵</div>
+
+        <!-- SECTION 1 -->
+        <p class="section-heading">一、【第一核心知识点名称】</p>
+
+        <p>【第一知识点详解。使用自然段落，包含概念解释 + 案例或场景。约 300-400 字。】</p>
+
+        <p class="sub-heading">1.1 【子主题A】</p>
+        <p>【子主题A的具体内容。】</p>
+
+        <p class="sub-heading">1.2 【子主题B】</p>
+        <p>【子主题B的具体内容。】</p>
+
+        <!-- BLUE QUOTE -->
+        <div class="quote-blue">
+            <p class="quote-text">【此处填写支撑数据、研究结论或专家观点，加强说服力。】</p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <p class="section-heading">二、【第二核心知识点名称】</p>
+
+        <p>【第二知识点详解。与第一知识点形成递进或对比关系。约 300-400 字。】</p>
+
+        <div class="quote-box">
+            <p class="quote-text">【此处填写第二知识点的核心引用。】</p>
+            <p class="quote-source">—— 【来源】</p>
+        </div>
+
+        <!-- SECTION 3 -->
+        <p class="section-heading">三、【第三核心知识点名称】</p>
+
+        <p>【第三知识点详解。将概念与现实应用场景连接。约 300-400 字。】</p>
+
+        <p class="sub-heading">3.1 【应用场景】</p>
+        <p>【具体应用案例，帮助读者建立从概念到行动的桥梁。】</p>
+
+        <div class="divider">✵</div>
+
+        <!-- COMMENTARY: 我的评论 -->
+        <div class="commentary-box">
+            <p class="commentary-title">四、那你说，这意味着什么？</p>
+            <p>【我的评论部分（约 400-500 字）：第一层：深层动机推演——这个现象背后的经济/社会/心理动机是什么。第二层：机制分析——系统如何运作，普通人不知道的逻辑是什么。第三层：可执行建议——四条以内，具体可操作。第四层：认知框架转变——高阶洞见。】</p>
+        </div>
+
+        <!-- TAKEAWAY: 由此得到 -->
+        <div class="takeaway-box">
+            <p class="takeaway-title">由此得到</p>
+            <ul>
+                <li><strong>1. </strong>【格言式总结1：朗朗上口，具有传播性】</li>
+                <li><strong>2. </strong>【格言式总结2：核心洞见提炼】</li>
+                <li><strong>3. </strong>【格言式总结3：行动指导或认知升级】</li>
+            </ul>
+        </div>
+
+        <!-- EXTENDED READING -->
+        <div class="reading-box">
+            <p class="reading-title">📚 扩展阅读</p>
+            <ul>
+                <li><strong>理论：</strong>【相关经典理论书籍，附简短推荐理由】</li>
+                <li><strong>实证：</strong>【相关实证研究或案例分析】</li>
+                <li><strong>比较：</strong>【其他相关主题的对比阅读】</li>
+                <li><strong>实践：</strong>【具体可操作的方法论书籍】</li>
+            </ul>
+        </div>
+
+        <!-- REFERENCES -->
+        
+            <h3 style="margin:28px 0 14px;font-size:15px;font-weight:600;color:#555;">📄 参考文献</h3>
+            <ul style="margin:0 0 32px 20px;padding:0;font-size:13px;color:#888;line-height:2;">
+                <li><a href="https://en.wikipedia.org/wiki/Positive_psychology" target="_blank">1. Positive psychology - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Barbara_Fredrickson" target="_blank">2. Barbara Fredrickson - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Dacher_Keltner" target="_blank">3. Dacher Keltner - Wikipedia</a></li><li><a href="https://link.springer.com/article/10.1007/s11031-026-10219-4" target="_blank">4. Transcending boredom in daily life: the impact of self-transcendent emotions and meaning in life | Motivation and Emotion | Springer Nature Link</a></li><li><a href="https://orgsci.substack.com/p/the-march-april-2026-issue-is-live" target="_blank">5. The March-April 2026 Issue Is Live - by Lamar Pierce</a></li>
+            </ul>
+
+        <!-- NAV -->
+        <div class="series-nav">
+            <a href="#">← 上节课</a>
+            <a href="#">下节课 →</a>
+        </div>
+
+        <!-- FOOTER CTA -->
+        <div class="footer-cta">
+            <p class="cta-title">点个关注不迷路</p>
+            <p class="cta-sub">关注「远的AI学习圈」，获取更多优质内容</p>
+            <img class="qrcode" src="qrcode.jpg" alt="远的AI学习圈二维码" />
+            <p class="brand">远的AI学习圈</p>
+            <p class="brand-sub">让你了解最前沿的AI科技资讯</p>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- BOTTOM HINT -->
+    <div class="bottom-hint">点击右上角按钮，一键复制全文到公众号编辑器</div>
+
+    <script>
+    function copyArticle() {
+        var content = document.getElementById('article-content').innerHTML;
+        var htmlBlob = new Blob([content], { type: 'text/html' });
+        var textBlob = new Blob([content], { type: 'text/plain' });
+        var items = [new ClipboardItem({ 'text/html': htmlBlob, 'text/plain': textBlob })];
+        navigator.clipboard.write(items).then(function() {
+            var btn = document.getElementById('copyBtn');
+            btn.textContent = '已复制 ✓';
+            btn.style.background = '#2e7d32';
+            setTimeout(function() {
+                btn.textContent = '复制到公众号';
+                btn.style.background = '#1a1a1a';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Copy failed:', err);
+            alert('复制失败，请手动全选复制');
+        });
+    }
+    </script>
+</body>
+</html>
