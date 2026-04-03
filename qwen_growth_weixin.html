@@ -14,9 +14,9 @@ document.getElementById('copyBtn').addEventListener('click', async function() {
   var content = document.getElementById('article-content').innerHTML;
   var htmlBlob = new Blob([content], { type: 'text/html' });
   var textBlob = new Blob([content], { type: 'text/plain' });
-  var items = [new ClipboardItem({ 
-    'text/html': htmlBlob, 
-    'text/plain': textBlob 
+  var items = [new ClipboardItem({
+    'text/html': htmlBlob,
+    'text/plain': textBlob
   })];
   await navigator.clipboard.write(items);
   this.textContent = '已复制';
@@ -144,13 +144,56 @@ document.getElementById('copyBtn').addEventListener('click', async function() {
     <p style="margin:0 0 8px;font-size:12px;font-weight:700;color:#c0392b;letter-spacing:2px;">我的评论</p>
     <p style="margin:0;font-size:15px;color:#333;line-height:1.85;">中国AI格局的主流叙事，是"百模大战"——300多个模型混战，最后活下来的只有几个。这个叙事没错，但它遮蔽了一些更有意思的东西。</p>
     <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">真正的竞争，不在于谁最先爆发，而在于谁能在爆发之后维持。豆包的流量优势是真实的，但流量是最容易被复制的护城河。千问的优势在于：它在打造一个"生态系统"——开发者用它建工具，企业用它跑业务，普通用户用它完成任务。一旦这个生态成型，替换成本会远高于换一个聊天App。</p>
-    <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">不过，这场战争远没有结束。2026年3月，Qwen3.5-Omni发布，旗舰全模态模型却不再开源——这是一个微妙的信号。负责开源社区的林俊旸也在同月离职。阿里是否会在商业化压力下收缩开源策略？这是未来最值得关注的变量。</p>
+    <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">不过，3月之后，这个故事又有了新的章节。</p>
+  </div>
+
+  <!-- UPDATE: MARCH-APRIL 2026 -->
+  <p style="margin:32px 0 14px;font-size:17px;font-weight:700;color:#1a1a1a;line-height:1.5;">4、3月之后：追赶者成了主角</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">3月到4月，千问连续发布三款重要产品，每一款都在重新定义阿里在AI竞争中的位置。</p>
+
+  <p style="margin:0 0 14px;font-size:15px;color:#1a1a1a;line-height:1.85;"><span style="font-weight:700;">3月16日，ATH事业群成立。</span>阿里巴巴宣布成立Alibaba Token Hub事业群，由CEO吴泳铭亲自带队，统一管理通义实验室、千问/MaaS事业部、悟空事业部、AI创新事业部以及Data&AI基础设施团队。这不是一次普通的组织调整——它意味着AI在阿里内部的战略地位从"增长引擎"升格为"核心业务"，吴泳铭直接对AI业务负总责，绕过了中间管理层。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">ATH这个名字本身就是一个信号：Token是AI调用的计量单位，是MaaS商业模式的核心计价基础。把所有AI资产归拢到一个叫"Token Hub"的事业群，等于宣告：阿里的AI战略不只是技术输出，而是一个以Token为货币的完整经济体系。</p>
+
+  <p style="margin:0 0 14px;font-size:15px;color:#1a1a1a;line-height:1.85;"><span style="font-weight:700;">3月30日，Qwen3.5-Omni发布。</span>这是千问的旗舰全模态模型，能够同时处理文本、图像、音频、视频的输入与生成，在215项基准评测中取得全球第一。但与此前所有Qwen旗舰模型不同的是：Qwen3.5-Omni是闭源的。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">这在社区引发了一场不大不小的震动。过去五年，千问以"最开放的中文AI品牌"著称，全球开发者习惯了免费获取最新基座模型。但前沿模型的训练成本已达数十亿美元，纯粹的开源策略在商业上越来越难以维系。36氪的报道直接点出了这个矛盾："阿里云越赚钱，开源生态越危险。"这是商业化对理想主义的一次现实修正。</p>
+
+  <p style="margin:0 0 14px;font-size:15px;color:#1a1a1a;line-height:1.85;"><span style="font-weight:700;">4月2日，Qwen3.6-Plus发布。</span>这是千问第一款以"Agent能力"为核心优化目标的模型。1M tokens的上下文窗口，可以一次性阅读一整个代码仓库；SWE-bench Verified评测得分78.8，超越所有开源模型和大多数闭源竞品；Terminal-Bench 2.0得分61.6，体现命令行自动化场景的实战能力。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">但最值得关注的不是分数，而是方向。千问3.6-Plus的定位不是"更好的聊天机器人"，而是"能自主完成复杂任务的AI员工"。它能理解一整个代码仓库后帮你重构模块，能根据自然语言指令操作终端执行部署任务，能在数百页的合同文档中找出关键风险点。这是从"AI回答问题"到"AI完成任务"的又一次跨越。</p>
+
+  <div style="background:#1a1a1a;border-radius:8px;padding:24px 28px;margin:24px 0 32px;">
+    <p style="margin:0 0 12px;font-size:12px;font-weight:700;color:#999;letter-spacing:2px;text-transform:uppercase;">千问2026年3-4月产品矩阵</p>
+    <p style="margin:0 0 8px;font-size:14px;color:#fff;line-height:1.9;">3月16日 · ATH事业群成立（吴泳铭亲自带队）</p>
+    <p style="margin:0 0 8px;font-size:14px;color:#fff;line-height:1.9;">3月30日 · Qwen3.5-Omni（旗舰全模态，215项SOTA，闭源）</p>
+    <p style="margin:0 0 8px;font-size:14px;color:#fff;line-height:1.9;">4月2日 · Qwen3.6-Plus（Agent专项，1M上下文，闭源）</p>
+    <p style="margin:0;font-size:14px;color:#f5c518;line-height:1.9;">3月8日 · 千问AI眼镜开售（40g，1997元，全球2026年内发布）</p>
+  </div>
+
+  <p style="margin:0 0 14px;font-size:15px;color:#1a1a1a;line-height:1.85;"><span style="font-weight:700;">同月，千问AI眼镜正式开售。</span>3月2日开放预约，3月8日全网开售，S1/G1双系列，重量仅40克，支持3K视频录制并通过AI算法超分至4K，原价2549元，补贴后1997元。这是阿里首次推出自有品牌的AI硬件，2026年内将在全球市场发售。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">AI眼镜的意义不只是硬件利润——它是千问从"App里的AI"向"随身AI"延伸的关键一步。Meta Ray-Ban智能眼镜已经验证了这条路，字节跳动也在秘密研发AI眼镜。如果AI眼镜成为继智能手机之后的下一代计算平台，千问在端侧AI的卡位将决定阿里在整个生态中的地位。</p>
+
+  <p style="margin:0 0 14px;font-size:15px;color:#1a1a1a;line-height:1.85;"><span style="font-weight:700;">但这个故事也有暗面。</span>3月初，千问AI团队的核心技术人员林俊旸在X平台宣布离职，3月26日正式离开阿里。他留下的离职长文《From "Reasoning" Thinking to "Agentic" Thinking》是一份难得的技术路线诊断书：AI能力正在从"推理"向"Agent"迁移，但团队在RL强化学习后训练方向上的投入不够果断，推理模型与指令跟随模型始终未能有效融合。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">林俊旸的离职，与Qwen3.6-Plus的发布，几乎在同一时间线上。这里面有两种解读：要么是团队在他离开后仍然沿着既定方向加速推进，证明那条路是对的；要么是他的判断确实戳中了问题，而千问选择了用行动而非话语来回应。无论哪种解读更接近真相，Qwen3.6-Plus的存在本身已经说明：千问的技术路线，已经不可逆转地转向了Agent。</p>
+
+  <!-- UPDATED MY COMMENTARY -->
+  <div style="background:#f9f5f3;border-radius:6px;padding:20px 24px;margin:32px 0 24px;">
+    <p style="margin:0 0 8px;font-size:12px;font-weight:700;color:#c0392b;letter-spacing:2px;">我的评论</p>
+    <p style="margin:0;font-size:15px;color:#333;line-height:1.85;">把3月之后的信息拼进来，千问的战略轮廓就清晰了。</p>
+    <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">第一，"开源换生态，闭源换收入"的两层结构正在成型。Qwen3.5-Omni和Qwen3.6-Plus是闭源旗舰，用来直接创造API收入；小参数开源模型继续开放，用来维护开发者关系和生态影响力。这不是对开源的背叛，而是一种更成熟的商业策略——Red Hat卖的是企业支持服务，不是源代码本身。</p>
+    <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">第二，AI竞争的核心正在从"模型能力"转向"生态整合"。当ChatGPT、Claude、Gemini、千问的模型能力差距越来越小，单纯的参数规模和基准分数已经不能决定胜负。谁能让用户在单一入口完成最多的事务——购物、打车、订票、写代码、管日历——谁就能建立最强的用户黏性。字节有流量但缺乏交易闭环，腾讯有社交但缺乏交易场景。阿里正在用ATH事业群打通所有业务线的数据和服务，构建一个"everything AI"的超级入口。</p>
+    <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">第三，Agent能力才是AI的"iPhone时刻"。过去两年，AI行业在"陪聊"上投入了巨量资源，用户与模型的对话越来越长、越来越流畅，但真正的商业价值迟迟未能兑现。千问的"AI办事"战略指向一个朴素但重要的洞察：AI的真正价值不在于"回答问题"，而在于"完成任务"。1.4亿用户在春节第一次用AI购物，这才是拐点。</p>
+    <p style="margin:12px 0 0;font-size:15px;color:#333;line-height:1.85;">当然，挑战依然严峻。林俊旸的离职暴露了技术路线上的深层矛盾；开源社区对闭源策略的情绪尚未平息；千问AI眼镜能否复制Meta的成功还是未知数。但有一点是确定的：千问已经不只是"追赶者"了，它正在成为一个自己定义赛道的玩家。</p>
   </div>
 
   <!-- TAKEAWAY -->
   <div style="background:#f5f3ef;border-radius:8px;padding:28px 28px 24px;margin:32px 0 16px;">
     <p style="margin:0 0 16px;font-size:13px;font-weight:700;color:#1a1a1a;letter-spacing:3px;border-bottom:1px solid #d0ccc4;padding-bottom:12px;">由此得到</p>
-    <p style="margin:0;font-size:16px;color:#1a1a1a;line-height:1.9;font-weight:600;">在AI战争里，先发不是优势，选对赛道才是。</p>
+    <p style="margin:0;font-size:16px;color:#1a1a1a;line-height:1.9;font-weight:600;">在AI战争里，先发不是优势，选对赛道才是。但比选赛道更重要的，是有足够的耐心和资源活到赛道被验证的那一天。</p>
   </div>
 
   <!-- 公众号关注卡片 -->
@@ -167,14 +210,14 @@ document.getElementById('copyBtn').addEventListener('click', async function() {
           <p style="margin:0;font-size:13px;color:#666;line-height:1.6;">长按识别二维码<br>关注我们</p>
         </td>
       </tr>
-    </tbody></table>
+    </table>
   </section>
 
 </div>
 
 <!-- FOOTER -->
 <div style="text-align:center;padding:24px 24px 32px;border-top:1px solid #e5e3de;font-size:12px;color:#999;background:#fafaf8;">
-  <p style="margin:0;">数据来源：AICPB AI产品月活报告（2026.02）/ Reuters《Alibaba's Qwen AI assistant surges past 200 million users》/ Alibaba FY2026 Q3财报 / Tech in Asia / Xsignal移动数据 / HuggingFace开源统计</p>
+  <p style="margin:0;">数据来源：AICPB AI产品月活报告（2026.02）/ Reuters《Alibaba's Qwen AI assistant surges past 200 million users》/ Alibaba FY2026 Q3财报 / Tech in Asia / Xsignal / HuggingFace / 量子位 / 36氪（2026年3-4月报道）/ 林俊旸X平台离职长文</p>
 </div>
 
 </body>
