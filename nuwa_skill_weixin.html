@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>假如人人都能被「蒸馏」成AI分身：你的护城河在哪里？</title>
+</head>
+<body style="margin:0;padding:0;background:#fafaf8;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',sans-serif;color:#1a1a1a;line-height:1.85;font-size:15px;">
+
+<!-- 复制按钮 -->
+<button id="copyBtn" style="position:fixed;top:16px;right:16px;padding:10px 20px;background:#1a1a1a;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,0.15);">一键复制到公众号</button>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', async function() {
+  var articleContent = document.getElementById('article-content').innerHTML;
+  var footerContent = document.getElementById('footer-content') ? document.getElementById('footer-content').innerHTML : '';
+  var fullContent = articleContent + footerContent;
+  var htmlBlob = new Blob([fullContent], { type: 'text/html' });
+  var textBlob = new Blob([fullContent], { type: 'text/plain' });
+  var items = [new ClipboardItem({ 
+    'text/html': htmlBlob, 
+    'text/plain': textBlob 
+  })];
+  await navigator.clipboard.write(items);
+  this.textContent = '✅ 已复制！';
+  this.style.background = '#2e7d32';
+  setTimeout(() => {
+    this.textContent = '一键复制到公众号';
+    this.style.background = '#1a1a1a';
+  }, 2000);
+});
+</script>
+
+<!-- HEADER -->
+<div style="background:#1a1a1a;color:#fff;padding:48px 32px 40px;text-align:center;">
+  <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin:0 0 14px 0;">INSIGHT · 精英日课风格</p>
+  <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.3px;margin:0 0 12px 0;color:#fff;line-height:1.4;">假如人人都能被「蒸馏」成AI分身：你的护城河在哪里？</h1>
+  <p style="color:#bbb;font-size:14px;margin:0 auto;max-width:500px;line-height:1.7;">女娲.skill 是真的能克隆人吗？答案藏在它自己声明的「做不到」里</p>
+  <table style="border-collapse:collapse;margin:20px auto 0;" cellspacing="0" cellpadding="0">
+    <tr>
+      <td style="padding:0 4px;"><span style="display:inline-block;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#ccc;font-size:12px;">AI工具</span></td>
+      <td style="padding:0 4px;"><span style="display:inline-block;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#ccc;font-size:12px;">数字分身</span></td>
+      <td style="padding:0 4px;"><span style="display:inline-block;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);color:#ccc;font-size:12px;">护城河</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- BODY -->
+<div id="article-content" style="max-width:720px;margin:0 auto;padding:40px 24px 60px;">
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">上个月，GitHub 上出现了一个叫「同事.skill」的项目，五天斩获 7500 个星标。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这个项目的功能，只需要一段介绍、一些公开资料，就能把任何一个人「蒸馏」成一个 AI 技能包——可以问他问题，可以让他帮你做事，可以让他按照他的方式说话、思考、回答。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">这个技术浪潮大概会让每个普通人都有同一个念头：完了，我也会被蒸馏。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">然后所有人都会问：我的护城河在哪？</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">不过在回答这个问题之前，我想先把这件事讲清楚——女娲.skill 到底是什么，它能蒸馏出什么，又蒸馏不了什么。</p>
+
+  <!-- 核心结论框 -->
+  <div style="background:#1a1a1a;color:#fff;padding:28px 24px;border-radius:12px;margin:32px 0;">
+    <p style="margin:0;font-size:17px;font-weight:600;line-height:1.85;">蒸馏系统的边界，就是「文字记录」的边界。写不进 SKILL.md 的部分，才是你真正的护城河。</p>
+  </div>
+
+  <!-- 小节 1 -->
+  <h3 style="margin:40px 0 16px;font-size:20px;font-weight:700;color:#1a1a1a;">1</h3>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">2026 年 4 月，开源社区里最火的概念不叫 Prompt，不叫 RAG，而是「.skill」。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">在 OpenClaw、Claude Code 这类 AI 编程助手平台上，skill 是一种人格化的 AI 插件——它不只是给你一个工具，而是给你装载一种视角，一套思维方式。巴菲特.skill、Naval.skill、费曼.skill，这些名字背后的逻辑，是把一个真实的人的认知框架，提炼成 AI 可以调用、可以对话的模块。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">花叔（53AI 创始人，腾讯云 TVP 专家 杨芳贤）开源了最初的「女娲.skill」项目，标语是「把任何人的思维方式蒸馏成可运行的 AI 视角」。GitHub 上的 stars 在发布后几天内超过 6700。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">随后衍生项目如雨后春笋：前任.skill、老板.skill、离职同事.skill……甚至还有「反蒸馏.skill」——专门教人如何保护自己不被别人蒸馏的工具。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">skill 的数量在半个月内从几百暴增到 5000 以上。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">整个生态的核心问题，就是一句话：你能被克隆吗？</p>
+
+  <!-- 小节 2 -->
+  <h3 style="margin:40px 0 16px;font-size:20px;font-weight:700;color:#1a1a1a;">2</h3>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">先别慌，来看女娲.skill 实际上在做什么。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">它不是在训练一个「替代你」的大模型，也不是在做人脸生成。它本质上是一个大规模多 Agent 信息采集和提炼系统。你告诉它一个名字，它会启动六路并行的 Agent，分头去搜这个人：</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">Agent 1 负责著作和长文，找反复出现的核心论点，区分「真信念」和「场面话」；Agent 2 负责长对话和访谈，捕捉被追问时的即兴反应；Agent 3 负责碎片表达，挖掘推文、短文、争论里的表达 DNA；Agent 4 专门看批评者怎么说，这个人的思维方式有什么漏洞；Agent 5 看决策记录，他实际做了什么而不是说了什么；Agent 6 看人生时间线，尤其是最近 12 个月的动态，捕捉思维方式的变化。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">六路并行，同步完成后，两个提炼 Agent 分别从这六份报告里独立提炼心智模型，然后交叉比对：两边都认定的收录为高置信结论，只有一边认定的降级为推测，两边矛盾的并列呈现、不强行统一。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">一个观点要升级为「心智模型」，还要通过三重验证：在两个以上领域重复出现过（跨域复现）；能推断这个人对新问题的立场（预测力）；不是「所有聪明人都这么想」的通用道理（辨识度）。</p>
+
+  <!-- 蓝色引用块 -->
+  <div style="background:#eef4fa;border-left:4px solid #2c5f8a;border-radius:0 6px 6px 0;padding:16px 20px;margin:8px 0 20px;">
+    <p style="margin:0;font-size:14px;color:#444;line-height:1.8;">花叔的工作流实践：「写文章问费曼，做产品决策问 Naval，评估风险问塔勒布，逆向思维查漏洞问芒格」。这不是一个通用助手，而是一个按需召唤的智囊团。</p>
+  </div>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">这是一套严格的工程体系，不是随便喂几段资料让 AI 模仿口吻。</p>
+
+  <!-- 小节 3 -->
+  <h3 style="margin:40px 0 16px;font-size:20px;font-weight:700;color:#1a1a1a;">3</h3>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">那么，女娲.skill 靠谱吗？</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">答案是：在特定范围内，相当靠谱。在特定范围外，它自己也说「做不到」。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">花叔原版项目里有一个设计细节，我觉得值得说一下：每个生成的 skill 文件，末尾都有一个「诚实边界」section，明确列出三件事——它蒸馏不了什么。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">第一，直觉。马斯克面对全新工程问题时的「我觉得这个方向是对的」，这种未文字化的判断，系统抓不到。因为它从来没有被写出来过，它存在于人的身体里，存在于神经网络里，存在于几十年决策经验的沉淀里。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">第二，观点突变。Skill 是截止到调研时间点的快照，不会自动更新。一个人上周改变了主意，skill 不知道。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">第三，公开表达不等于真实想法。播客里说的话，和实际做决策时的内心，可能差很远。</p>
+
+  <!-- 红色引用块 -->
+  <div style="background:#fdf4f3;border-left:4px solid #c0392b;border-radius:0 6px 6px 0;padding:16px 20px;margin:8px 0 20px;">
+    <p style="margin:0;font-size:14px;color:#444;font-style:italic;line-height:1.8;">「我们知道的，永远比我们能说出来的多。」</p>
+    <p style="margin:8px 0 0;font-size:12px;color:#999;font-style:normal;">——迈克尔·波兰尼，「隐性知识」概念提出者</p>
+  </div>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">骑自行车的平衡感，你没办法用语言精确描述；资深工程师看日志定位故障的直觉，无法写成文档；优秀销售在谈判中选择沉默的时机，没有任何一条规则能覆盖。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">这些知识，只活在人的身体里，活在真实的实践和失败中，活在不可言说的地方。它是所有蒸馏系统的盲区，也是所有公开资料的死角。虎嗅的一篇文章里有一句话：「AI 只能抓取显性知识——已写下的文档，已说出的回复。」蒸馏系统的边界，就是「文字记录」的边界。</p>
+
+  <!-- 小节 4 -->
+  <h3 style="margin:40px 0 16px;font-size:20px;font-weight:700;color:#1a1a1a;">4</h3>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">好，现在回到那个更重要的问题。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">假如「女娲化」变成了基础设施，假如五年后每个知名人物、每个领域专家、甚至每个有点本事的普通同事都被蒸馏成了 skill，可以随时调用——那普通人的价值在哪里？</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">先把一个常见的误解拆掉。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">很多人的第一反应是：我要学一个 AI 不会的技能，做一件 AI 做不了的事。这个想法方向没错，但往往导向了错误的动作——花大量精力去囤积技能，学这个、考那个，好像能力越多就越安全。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">但技能是最容易被蒸馏的东西。技能是「怎么做」的知识，是可以被语言描述的流程，是可以被文档化的操作。你花三年学的操作流程，很可能正好是 skill 系统最擅长处理的那种东西。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">护城河不在技能里，在三个地方。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>第一，关系。</strong></p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">巴菲特.skill 能告诉你「要找有护城河的公司」，但它没办法帮你在饭局上认识那个能改变你职业轨迹的人。它给不了你一个在关键时刻愿意背书的朋友。它做不了信任——信任是在无数次共同经历、共同承受压力、共同犯错之后才会生长的东西，它只在时间里生长，只在「我与你」的真实关系里存在。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">德国哲学家马丁·布伯把人的关系分成两种：「我与你」和「我与它」。对工具，我们用「我与它」的方式；对真正的人，我们用「我与你」的方式。Skill 永远只能是「它」——无论它多像你，它都是功能接口，不是生命体。而人与人之间的真实连接，天然排斥被替代。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>第二，流动性。</strong></p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">Skill 是快照。它定格在采集的那一刻，它的认知边界是固定的，它不知道上个月发生了什么，它不会因为遭遇挫败而改变。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">真实的人是流动的。我们在犯错后更新判断，在碰壁后开拓新路径，在打破旧框架之后长出新框架。这种「在混沌中自我进化」的能力，是目前所有蒸馏系统都追不上的东西——不是因为技术不够，而是因为你根本没有办法「蒸馏一个正在进化中的人」，你只能蒸馏他过去的某个版本。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">所以有一句话说得很对：持续打破认知边界的人，永远比云端的影子快一步。你只要一直在向前走，你永远是最新的版本，而你的 skill 只能是历史的截图。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;"><strong>第三，责任和承担。</strong></p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">人们愿意为「活生生的人」付费，有一个根本原因——出了事情，能找到负责人。</p>
+
+  <p style="margin:0 0 18px;font-size:15px;color:#1a1a1a;line-height:1.85;">律师给你出法律意见，你付的不只是他的知识，你付的是他对这个判断的信用背书，是他愿意在出错时承担后果的承诺。医生给你做手术，你信任的不是他掌握的操作流程，而是他在那个手术室里全神贯注、在关键判断上替你担责的人。</p>
+
+  <p style="margin:0 0 24px;font-size:15px;color:#1a1a1a;line-height:1.85;">Skill 只给建议，不承担风险。这个差距，不是技术问题，是本质差异。</p>
+
+  <!-- 我的评论 -->
+  <div style="border-left:3px solid #c0392b;padding:0 0 0 16px;margin:32px 0 24px;">
+    <p style="margin:0 0 8px;font-size:12px;font-weight:700;color:#c0392b;letter-spacing:2px;text-transform:uppercase;">我的评论</p>
+    <p style="margin:0 0 16px;font-size:15px;color:#333;line-height:1.85;">说实话，我看完女娲.skill 之后，第一感受不是「哇好厉害」，也不是「完了要失业了」。</p>
+    <p style="margin:0 0 16px;font-size:15px;color:#333;line-height:1.85;">我的第一感受是，这件事把一个长期存在但从没被正视的现实暴露出来了：你以为自己的「价值」来自你掌握的知识和技能，但其实大部分知识和技能，从来都不只属于你。</p>
+    <p style="margin:0 0 16px;font-size:15px;color:#333;line-height:1.85;">你学的方法论，有人写在书里。你的分析框架，有人在课程里讲过。你的工作流程，你的老板或者前辈大概率给了你一个版本。这些东西，从一开始就是可以传授、可以复制的——只是以前复制的成本很高。</p>
+    <p style="margin:0 0 16px;font-size:15px;color:#333;line-height:1.85;">女娲.skill 做的事情，是把复制成本降低到接近零。</p>
+    <p style="margin:0 0 16px;font-size:15px;color:#333;line-height:1.85;">这不是新的危机，这是一个长期存在的问题被加速放大了。</p>
+    <p style="margin:0 0 16px;font-size:15px;color:#333;line-height:1.85;">真正属于你的，只有那些在文字记录里捕捉不到的部分：你在深夜纠结一个决定时的真实心理状态，你在和某个人的真实关系里积累的信任，你在某次彻底失败之后重新站起来的那个新的自己。</p>
+    <p style="margin:0;font-size:15px;color:#333;line-height:1.85;">还有一点我觉得值得提：花叔在项目文档里写的那句话，「写不进 SKILL.md 的部分，才是你真正的护城河」，我觉得比所有「如何应对 AI 时代」的文章都说得准。护城河不是「AI 做不了的那些事」，而是「根本没有办法被写下来的那些事」。</p>
+  </div>
+
+  <!-- 由此得到 -->
+  <div style="background:#1a1a1a;color:#fff;border-radius:8px;padding:28px 28px 24px;margin:32px 0 16px;">
+    <p style="margin:0 0 16px;font-size:13px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:12px;">由此得到</p>
+    <p style="margin:0 0 12px;font-size:15px;color:#e8e6e0;line-height:1.8;">写不进 SKILL.md 里的部分，才是你真正的护城河。</p>
+    <p style="margin:0 0 12px;font-size:15px;color:#e8e6e0;line-height:1.8;">技能可以被蒸馏，智慧只能靠挫败积累。持续进化的人，永远比云端的影子快一步。</p>
+    <p style="margin:0 0 12px;font-size:15px;color:#e8e6e0;line-height:1.8;">真实的关系不能被替代，因为信任只在时间里生长。</p>
+    <p style="margin:0;font-size:15px;color:#e8e6e0;line-height:1.8;">Skill 只给建议，不承担风险。承担风险的人，永远有价值。</p>
+  </div>
+
+  <p style="margin:24px 0 0;font-size:14px;color:#888;line-height:1.85;text-align:center;">你觉得你身上最难被蒸馏的部分是什么？评论区聊聊。</p>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-content">
+<section style="background:#f5f5f7;border-radius:12px;padding:24px;text-align:center;margin:0 auto 40px;max-width:720px;">
+  <p style="margin:0 0 12px;font-size:14px;color:#86868b;">
+    <span leaf="">喜欢这篇文章？</span>
+  </p>
+  <p style="margin:0;font-size:15px;color:#1a1a1a;">
+    <strong><span leaf="">关注我，获取课程同步解读和前沿研究近况</span></strong>
+  </p>
+  <p style="margin:0;font-size:15px;color:#1a1a1a;">
+    <strong><span leaf=""><br></span></strong>
+  </p>
+  <section style="text-align:center;" nodeleaf="">
+    <img data-src="https://mmbiz.qpic.cn/mmbiz_jpg/uchEQibLGnsggG7CdL9ZphAuajRYZwDjz5OqOIeEsvyBgdJR4GputibpSkRRX3x48dZoa9adOpiatdtQRUia4SD9ZFMnicVYwVGHXBRlcrVIuq04/640?wx_fmt=jpeg&amp;from=appmsg" class="rich_pages wxw-img" data-ratio="1" data-s="300,640" data-type="jpeg" data-w="430" style="width:164px;height:164px;" type="block" data-imgfileid="100000207" data-imgqrcoded="1" data-aistatus="1" src="https://mmbiz.qpic.cn/mmbiz_jpg/uchEQibLGnsggG7CdL9ZphAuajRYZwDjz5OqOIeEsvyBgdJR4GputibpSkRRX3x48dZoa9adOpiatdtQRUia4SD9ZFMnicVYwVGHXBRlcrVIuq04/640?wx_fmt=jpeg&amp;from=appmsg">
+  </section>
+</section>
+</div>
+
+<!-- 辅助信息 -->
+<div style="text-align:center;padding:0 24px 32px;font-size:12px;color:#bbb;background:#fafaf8;">
+  <p style="margin:0;">远的AI学习圈 · 让你了解最前沿的AI科技资讯</p>
+</div>
+
+<!-- 使用提示 -->
+<div style="position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:12px 20px;border-radius:8px;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:9999;">
+  💡 点击右上角按钮，一键复制到公众号编辑器
+</div>
+
+</body>
+</html>
